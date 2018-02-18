@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/AnishaMuruganandan/nodehelloworld/issues"
   },
+  "engines": {
+    "node": "4.1.1"
+  },
   "homepage": "https://github.com/AnishaMuruganandan/nodehelloworld#readme"
 }
