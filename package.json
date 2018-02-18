@@ -8,10 +8,10 @@
     "express": "4.16.2",
     "popups": "^1.1.3"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/AnishaMuruganandan/nodehelloworld.git"
@@ -24,5 +24,9 @@
   "engines": {
     "node": "8.9.4"
   },
+  "scripts": {
+  "postinstall": "bower install && grunt build",
+  "start": "nf start"
+},
   "homepage": "https://github.com/AnishaMuruganandan/nodehelloworld#readme"
 }
