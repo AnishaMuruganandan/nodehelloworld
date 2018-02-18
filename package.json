@@ -24,9 +24,5 @@
   "engines": {
     "node": "8.9.4"
   },
-  "scripts": {
-  "postinstall": "bower install && grunt build",
-  "start": "nf start"
-},
   "homepage": "https://github.com/AnishaMuruganandan/nodehelloworld#readme"
 }
