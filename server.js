@@ -8,11 +8,14 @@ var app = express();
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Listen for requests
-var server = app.listen(app.get('port'), function() {
-  var port = server.address().port;
-  console.log('Magic happens on port ' + port);
+// var server = app.listen(app.get('port'), function() {
+//   var port = server.address().port;
+//   console.log('Magic happens on port ' + port);
+// });
+var port = process.env.PORT || 3000;
+app.listen(port, "0.0.0.0", function() {
+console.log("Listening on Port" +port);
 });
-
 
 
 
