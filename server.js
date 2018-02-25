@@ -1,23 +1,23 @@
-var express = require('express');
-var app = express();
+var express = require("express");
+var app     = express();
+app.use(express.static(__dirname + '/public/views'));
+//Store all HTML files in view folder.
+app.use(express.static(__dirname + '/css'));
+//Store all JS and CSS in Scripts folder.
 
-// set the port of our application
-// process.env.PORT lets the port be set by Heroku
-var port = process.env.PORT || 8080;
-
-// set the view engine to ejs
-app.set('view engine', 'ejs');
-
-// make express look in the public directory for assets (css/js/img)
-app.use(express.static(__dirname + '/public'));
-
-// set the home page route
-app.get('/', function(req, res) {
-
-    // ejs render automatically looks in the views folder
-    res.render('index');
+app.get('/',function(req,res){
+  res.sendFile('index.html');
+  //It will find and locate index.html from View or Scripts
 });
 
-app.listen(port, function() {
-    console.log('Our app is running on http://localhost:' + port);
-});
+// app.get('/about',function(req,res){
+//   res.sendFile('/about.html');
+// });
+//
+// app.get('/sitemap',function(req,res){
+//   res.sendFile('/sitemap.html');
+// });
+
+app.listen(3000);
+
+console.log("Running at Port 3000");
