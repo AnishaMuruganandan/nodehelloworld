@@ -6,7 +6,7 @@ app.use(express.static(__dirname + '/css'));
 //Store all JS and CSS in Scripts folder.
 
 app.get('/',function(req,res){
-  res.sendFile('index.html');
+  res.sendFile('index');
   //It will find and locate index.html from View or Scripts
 });
 
@@ -19,5 +19,4 @@ app.get('/',function(req,res){
 // });
 
 // app.listen(3000);
-
 console.log("Running at Port 3000");
