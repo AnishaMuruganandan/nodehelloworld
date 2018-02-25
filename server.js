@@ -27,8 +27,8 @@ app.get('/', function(req, res) {
 //   res.sendFile('/sitemap.html');
 // });
 
-// app.listen(3000);
-var port = process.env.PORT || 8000;
-app.listen(port, function() {
-    console.log("App is running on port " + port);
-});
+app.listen(3000);
+// var port = process.env.PORT || 8000;
+// app.listen(port, function() {
+//     console.log("App is running on port " + port);
+// });
