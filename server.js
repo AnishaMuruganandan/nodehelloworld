@@ -1,6 +1,7 @@
 var express = require("express");
 var app     = express();
 var path = require('path');
+
 // app.use(express.static(__dirname + '/public/views'));
 //Store all HTML files in view folder.
 // app.use(express.static(__dirname + '/css'));
@@ -13,7 +14,7 @@ var path = require('path');
 
 // viewed at http://localhost:8080
 app.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname + 'index.html'));
+    res.sendFile(path.join(__dirname + '/index.html'));
 });
 
 
@@ -27,8 +28,7 @@ app.get('/', function(req, res) {
 // });
 
 // app.listen(3000);
-var port = process.env.PORT || 8000
-server.listen(port, function() {
+var port = process.env.PORT || 8000;
+app.listen(port, function() {
     console.log("App is running on port " + port);
 });
-console.log("Running at Port 3000");
