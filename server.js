@@ -1,33 +1,29 @@
-var express = require("express");
-var app     = express();
+var express = require('express');
 var path = require('path');
+var app = express();
 
-// app.use(express.static(__dirname + '/public/views'));
-//Store all HTML files in view folder.
-// app.use(express.static(__dirname + '/css'));
-//Store all JS and CSS in Scripts folder.
+// Define the port to run on
+app.set('port', 3000);
 
-// app.get('/',function(req,res){
-//   res.sendFile('public/views/index.html');
-//   //It will find and locate index.html from View or Scripts
-// });
+app.use(express.static(path.join(__dirname, 'public')));
 
-// viewed at http://localhost:8080
-app.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname + '/index.html'));
+// Listen for requests
+var server = app.listen(app.get('port'), function() {
+  var port = server.address().port;
+  console.log('Magic happens on port ' + port);
 });
 
 
 
-// app.get('/about',function(req,res){
-//   res.sendFile('/about.html');
+
+// var express = require("express");
+// var app     = express();
+// var path = require('path');
+//
+// app.get('/', function(req, res) {
+//     res.sendFile(path.join(__dirname + '/index.html'));
 // });
 //
-// app.get('/sitemap',function(req,res){
-//   res.sendFile('/sitemap.html');
-// });
-
-app.listen(3000);
 // var port = process.env.PORT || 8000;
 // app.listen(port, function() {
 //     console.log("App is running on port " + port);
