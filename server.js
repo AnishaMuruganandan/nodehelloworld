@@ -2,7 +2,7 @@ var express = require("express");
 var app     = express();
 app.use(express.static(__dirname + '/public/views'));
 //Store all HTML files in view folder.
-app.use(express.static(__dirname + '/css'));
+// app.use(express.static(__dirname + '/css'));
 //Store all JS and CSS in Scripts folder.
 
 app.get('/',function(req,res){
@@ -24,3 +24,8 @@ server.listen(port, function() {
     console.log("App is running on port " + port);
 });
 console.log("Running at Port 3000");
+
+
+
+// Render some console log output
+console.log("Listening on port " + port);
