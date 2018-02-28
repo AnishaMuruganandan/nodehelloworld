@@ -3,7 +3,7 @@ var path = require('path');
 var app = express();
 
 //<!--To include json-->
-//var json = require('express-json');
+var json = require('express-json');
 
 
 //<--To Display static html page -->
@@ -43,7 +43,10 @@ app.use(function (req, res) {
   // var cursor = db.collection('quotes').find()
   //<!--To read the collection from mlab-->
   db.collection('quotes').find().toArray(function(err, results) {
-  console.log(results)
+  //console.log(results)
+  res.json({
+results
+    });
   //<!--end of read>
   // send HTML file populated with quotes here
 })
@@ -58,5 +61,6 @@ MongoClient.connect('mongodb://root:root@ds151908.mlab.com:51908/details', (err,
 
   app.listen(port, "0.0.0.0", function() {
   console.log("Listening on Port" +port);
+
   });
 })
