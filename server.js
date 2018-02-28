@@ -33,24 +33,28 @@ const MongoClient = require('mongodb').MongoClient
 
 app.use(function (req, res) {
 //<!--To write into collection into mlab db-->
-  //  var myobj = { name: "Company Inc", address: "Highway 37" };
-  // db.collection('quotes').save(myobj, (err, result) => {
-  //   if (err) return console.log(err)
-  //
-  //   console.log('saved to database')
+var value1 = req.param('a');
+ var value2 = req.param('b');
+
+   var myobj = { name: value1, address: value2 };
+  db.collection('info').save(myobj, (err, result) => {
+   if (err) return console.log(err)
+
+  console.log('saved to database')
+   })
   //   res.redirect('/')
   //<!--end of writing collection-->
   // var cursor = db.collection('quotes').find()
   //<!--To read the collection from mlab-->
-  db.collection('quotes').find().toArray(function(err, results) {
+  db.collection('info').find().toArray(function(err, result) {
   //console.log(results)
   res.json({
-results
+result
     });
   //<!--end of read>
   // send HTML file populated with quotes here
 })
-//  })
+
 })
 var db
   var port = process.env.PORT || 4000;
