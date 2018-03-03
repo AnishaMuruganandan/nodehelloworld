@@ -67,10 +67,10 @@ const MongoClient = require('mongodb').MongoClient
 //app.use(bodyParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
-app.post('/endpoint', function(req, res){
+app.post('/', function(req, res){
 	var obj = {};
 	console.log('body: ' + JSON.stringify(req.body));
-	
+
 
   var str2json = require('string-to-json');
 
