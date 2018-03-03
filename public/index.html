@@ -26,37 +26,37 @@
 
 <script src="http://code.jquery.com/jquery-1.6.2.min.js"></script>
 <script type="text/javascript">
-  $(function() {
-    $('#btn').click(function(e) {
-      e.preventDefault();
-      console.log('button clicked');
+  //$(function() {
+  $('#btn').click(function(e) {
+    e.preventDefault();
+    console.log('button clicked');
 
-      var data = {};
-      data.a = $('#value1').val();
-      data.b = $('#value2').val();
+    var data = {};
+    data.a = $('#value1').val();
+    data.b = $('#value2').val();
 
-      $.ajax({
-        type: 'POST',
-        data: JSON.stringify(data),
-        contentType: 'application/json',
-        url: 'https://nodehelloworld.herokuapp.com/endpoint',
-        success: function(data) {
-          console.log('success');
-          console.log(JSON.stringify(data.length));
-          for (var i = 0; i < data.length; i++) {
-            var table = document.getElementById("myTable");
-            var row = table.insertRow(i);
-            var cell1 = row.insertCell(0);
-            var cell2 = row.insertCell(1);
-            cell1.innerHTML = data[i].a;
-            cell2.innerHTML = data[i].b;
-          }
+    $.ajax({
+      type: 'POST',
+      data: JSON.stringify(data),
+      contentType: 'application/json',
+      url: 'https://nodehelloworld.herokuapp.com/endpoint',
+      success: function(data) {
+        console.log('success');
+        console.log(JSON.stringify(data.length));
+        for (var i = 0; i < data.length; i++) {
+          var table = document.getElementById("myTable");
+          var row = table.insertRow(i);
+          var cell1 = row.insertCell(0);
+          var cell2 = row.insertCell(1);
+          cell1.innerHTML = data[i].a;
+          cell2.innerHTML = data[i].b;
         }
-
-      });
+      }
 
     });
+
   });
+  //  });
 </script>
 
 
